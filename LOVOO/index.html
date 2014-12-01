@@ -3,14 +3,192 @@
 <head>
     <title></title>
     <meta charset="utf-8" />
+    <link href="kendo/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.default.min.css" rel="stylesheet" />
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-
+    <link href="style/main.css" rel="stylesheet" />
+    
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
-    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="kendo/js/kendo.all.min.js"></script>
     
+    <style>
+        #loadpage .km-content{background-image:url('style/image/L4.jpg');background-repeat: no-repeat;background-size: 100% 100%;opacity:0.6;filter: alpha(opacity=60);}
+    </style>
 </head>
 <body>
     
+    <div data-role="view" id="loadpage">
+        <div id="content_loadpage">
+            <div id="loadingPregressBar"></div>
+        </div>
+    </div>
+    
+    
+    
+    <!----------------------------------------------------------------------------------------->
+    <!--main page-->
+    <div data-role="view" id="mainpage" data-transition="zoom" data-stretch="true" >
+        
+        <div style="width:100%;height:auto;margin-top:-60px;">
+            <div style="width:100%;height:430px;margin:0px auto;background-image:url('style/image/L6.jpg');background-repeat: no-repeat;background-size: 100% 430px;">
+                <div data-role="scrollview" data-page="1" style="width:75%;margin:0px auto;margin-top:60px;">
+                    <div data-role="page" class="pp1"></div>
+                    <div data-role="page" class="pp2"></div>
+                    <div data-role="page" class="pp3"></div>
+                    <div data-role="page" class="pp4"></div>
+                    <div data-role="page" class="pp5"></div>
+                    <div data-role="page" class="pp6"></div>
+                </div>
+            </div>
+            
+            <div style="width:100%;height:60px;margin-top:35px;">
+                <p>
+                    <a data-role="button" href="#login" style="width:130px;height:40px;line-height:22px;margin-left:-3px;background-color:#DBDBDB">Log in</a>
+                    <a data-role="button" href="register" style="width:130px;height:40px;line-height:22px;margin-left:24px;background-color:#85C643">Register</a>
+                </p>
+            </div>
+        </div>
+        
+        <style>
+            .pp1{height:370px;background-image:url('style/image/L1.jpg');background-repeat: no-repeat;background-size: 100% 370px;}
+            .pp2{height:370px;background-image:url('style/image/img.jpg');background-repeat: no-repeat;background-size: 100% 370px;}
+            .pp3{height:370px;background-image:url('style/image/L3.jpg');background-repeat: no-repeat;background-size: 100% 370px;}
+            .pp4{height:370px;background-image:url('style/image/L5.jpg');background-repeat: no-repeat;background-size: 100% 370px;}
+            .pp5{height:370px;background-image:url('style/image/L2.jpg');background-repeat: no-repeat;background-size: 100% 370px;}
+            .pp6{height:370px;background-image:url('style/image/group.jpg');background-repeat: no-repeat;background-size: 100% 370px;}
+        </style>
+    </div>
+    
+    <!---------------------------------------------------------------------------------------------------------------------->
+    
+    
+    <!--Login-->
+    <div data-role="view" id="login" data-title="Login" data-layout="login_layout" data-transition="overlay:up">
+       <div data-role="content">
+           <div class="loginMainDV">
+               <div id="loginDV1">
+                   <p>
+                       <input type="text" name="uname" id="uname" class="txtbox" placeholder="Email Address"/>
+                   </p>
+                   <p>
+                       <input type="password" name="pwd" id="pwd" class="txtbox" placeholder="Password"/>
+                   </p>
+                   <p>
+                       <a href="#forgot" data-role="button" data-rel="modalview" class="Fbtn">Forgot Password?</a>
+                       <a data-role="button" class="btn">Log in</a>
+                   </p>
+               </div>
+               
+               <div id="loginDV2">
+                   <hr>&nbsp;<span>or</span>&nbsp;<hr>
+               </div>
+               
+               <div id="loginDV3">
+                   <p>
+                       <a data-role="button" class="btn" style="background-image:url('style/image/fb.png');background-size:70px 42px;"></a>
+                       <a data-role="button" class="btn" style="background-image:url('style/image/twt.png');background-size:70px 42px;"></a>
+                       <a data-role="button" class="btn" style="background-image:url('style/image/gplus.png');background-size:70px 42px;"></a>
+                   </p>
+                   <p>
+                       <a style="margin-left:28px;text-decoration:none;color:#EF84C5;font-style:italic">New to LOVOO?Register for free!</a>
+                   </p>
+               </div>
+           </div>
+       </div>
+    </div>
+    
+    
+    <!---------------------------------------------------------------------------------------------------------------------->
+
+    <!--Register-->
+    <div data-role="view" id="register" data-title="Register" data-layout="register_layout" data-transition="overlay:up">
+       <div data-role="content">
+           <div class="registerMainDV">
+               <div id="registerDV1">
+                   <p>
+                       Welcome to LOVOO. Register for free. It just take a minute!
+                   </p>
+               </div>
+               
+               <div id="registerDV2">
+                   <div class="fbregister" style="background:url('style/image/regfb.png');background-size:100% 100%;"></div>
+                   <div class="twtregister" style="background:url('style/image/regtwt.png');background-size:100% 100%;"></div>
+                   <div class="gplusregister" style="background:url('style/image/reggplus.png');background-size:100% 100%;"></div>
+                   <div class="txtcontent">
+                       <p>
+                           Our Promise:We will never post anything to your storyline or feed without your explicit permission.
+                       </p>
+                   </div>
+                   <div class="emailregister">
+                       <span>Register with email address</span>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+    
+    
+    <!---------------------------------------------------------------------------------------------------------------------->
+
+    <!--Forgot Password-->
+    <div data-role="modalview" id="forgot" data-title="Forgot Password" data-model="app.loginService.viewModel"  style="width:90%;height:190px;">
+        <div data-role="header">
+            <div data-role="navbar" class="forgot_nvbar">
+                <span data-role="view-title" class="forgot_span"></span>
+            </div>
+        </div>
+        <div data-role="content">
+            <p>
+                 <input type="text" name="uname" id="uname" class="txtbox" placeholder="Email Address"/>
+            </p>
+            <p>
+                <a data-role="button"  class="btn" data-bind="click:forgotSubmit">Submit</a>
+                <a data-role="button" class="btn" data-bind="click:closeModalView">cancel</a>
+            </p>
+        </div>
+    </div>
+    
+    
+    <!---------------------------------------------------------------------------------------------------------------------->
+    
+    <!--Layouts-->
+    <div data-role="layout" data-id="login_layout">
+        <div data-role="header">
+            <div data-role="navbar" class="login_nvbar">
+                <a data-role="backbutton" data-align="left" class="login_a">Back</a>
+                <span data-role="view-title" class="login_span"></span>
+            </div>
+        </div>
+    </div>
+    
+    <div data-role="layout" data-id="register_layout">
+        <div data-role="header">
+            <div data-role="navbar" class="register_nvbar">
+                <a data-role="backbutton" data-align="left" class="register_a">Back</a>
+                <span data-role="view-title" class="register_span"></span>
+            </div>
+        </div>
+        <div data-role="footer" class="footerClass">
+            <p>
+                <a>General Terms and Condition of Use</a>
+            </p>
+        </div>
+    </div>
+    
+    <div data-role="layout" data-id="forgot_layout">
+        <div data-role="header">
+            <div data-role="navbar" class="forgot_nvbar">
+                <a data-role="backbutton" data-align="left" class="forgot_a">Back</a>
+                <span data-role="view-title" class="forgot_span"></span>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!--script-->
+    <script src="script/app.js"></script>
+    <script src="script/loadPage.js"></script>
+    <script src="script/login.js"></script>
 </body>
 </html>

@@ -1,0 +1,57 @@
+body {
+}
+
+#loadpage #content_loadpage #loadingPregressBar { width:200px;height:2px;margin:0px auto;position:absolute;top:475px;left:15px;right:15px;}
+
+/*LOGIN*/
+#login .km-content{background-color:#FFFFFF}
+.login_nvbar{background-color:#645860 !important;border-bottom:1px solid red !important}
+.login_nvbar .login_a{color:white}
+.login_nvbar .login_span{color:white}
+.loginMainDV{width:100%;height:auto}
+#loginDV1{ width:100%;height:auto;margin-top:30px;margin-bottom:10px;}
+#loginDV1 .txtbox{ width:100%;height:32px;border:1px solid #ccc;padding-left:7px;}
+#loginDV1 .btn{width:150px;float:right;height:38px;line-height:22px;background-color:#85C643;color:#FFF}
+#loginDV1 .Fbtn{background-color:#FFFFFF !important;color:#EF84C5;font-style:italic;border:0px solid;line-height:0px;margin-left:0px;font-size:14px;}
+#loginDV2{width:100%;margin:0px auto;margin-top:35px;}
+#loginDV2 hr:nth-child(1){width:46%;float:left;border:1px solid #E7E5E5}
+#loginDV2 hr:nth-child(3){width:46%;float:right;border:1px solid #E7E5E5}
+#loginDV2 span{color:#E7E5E5}
+#loginDV3{width:95%;height:100px;margin:0px auto;margin-top:15px;}
+#loginDV3 .btn{width:70px;height:42px;line-height:22px;}
+#loginDV3 .btn:nth-child(1){margin-left:15px;}
+#loginDV3 .btn:nth-child(2){margin-left:11px;}
+#loginDV3 .btn:nth-child(3){margin-left:11px;}
+
+
+/*REGISTER*/
+#register .km-content{background-color:#FFFFFF}
+.register_nvbar{background-color:#645860 !important;border-bottom:1px solid red !important}
+.register_nvbar .register_a{color:white}
+.register_nvbar .register_span{color:white}
+.registerMainDV{width:100%;height:auto}
+.registerMainDV #registerDV1{width:100%;height:auto;background-color:#DEDCDC;border:1px solid #ccc;line-height:25px;font-size:18px;color:#807F7F}
+#registerDV1 p{margin-left:25px;}
+.footerClass{background-color:#DEDCDC;height:50px;}
+.footerClass p{margin:18px 0px 0px 35px;font-style:italic;color:#EF84C5;font-weight:bold}
+.registerMainDV #registerDV2{width:100%;height:auto;margin-top:15px;}
+#registerDV2 .fbregister{width:90%;height:45px;margin:0px auto;margin-top:12px;}
+#registerDV2 .twtregister{width:90%;height:45px;margin:0px auto;background:yellow;margin-top:12px;}
+#registerDV2 .gplusregister{width:90%;height:45px;margin:0px auto;background:green;margin-top:12px;}
+#registerDV2 .txtcontent{width:100%;height:50px;}
+.txtcontent p{font-size:13px;text-align:center}
+#registerDV2 .emailregister{width:90%;height:45px;margin:0px auto;background:#85C643;margin-top:12px;}
+#registerDV2 .emailregister span{line-height: 40px;margin-left: 57px;;color:white}
+
+/*FORGOT*/
+#forgot .km-content{background-color:#FFFFFF}
+#forgot .forgot_nvbar{background-color:#645860 !important;border-bottom:1px solid red !important}
+#forgot .forgot_nvbar .forgot_a{color:white}
+#forgot .forgot_nvbar .forgot_span{color:white;font-size:15px;}
+#forgot .txtbox{ width:100%;height:32px;padding-left:7px}
+#forgot .btn{width:120px;height:38px;line-height:22px;background-color:#85C643;color:#FFF;}
+#forgot p{margin-top:25px;}
+#forgot p:nth-child(2) .btn:nth-child(1){margin-left:0px;}
+#forgot p:nth-child(2) .btn:nth-child(2){margin-left:11px;}
+
+
