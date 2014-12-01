@@ -32,8 +32,8 @@ body {
 .registerMainDV{width:100%;height:auto}
 .registerMainDV #registerDV1{width:100%;height:auto;background-color:#DEDCDC;border:1px solid #ccc;line-height:25px;font-size:18px;color:#807F7F}
 #registerDV1 p{margin-left:25px;}
-.footerClass{background-color:#DEDCDC;height:50px;}
-.footerClass a{margin:18px 0px 0px 35px;font-style:italic;color:#EF84C5;font-weight:bold}
+#register .footerClass{background-color:#DEDCDC;height:50px;}
+#register .footerClass a{margin:18px 0px 0px 35px;font-style:italic;color:#EF84C5;font-weight:bold;line-height:50px;}
 .registerMainDV #registerDV2{width:100%;height:auto;margin-top:15px;}
 #registerDV2 .fbregister{width:90%;height:45px;margin:0px auto;margin-top:12px;}
 #registerDV2 .twtregister{width:90%;height:45px;margin:0px auto;background:yellow;margin-top:12px;}
