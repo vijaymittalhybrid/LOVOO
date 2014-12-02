@@ -16,6 +16,16 @@
         closeModalView:function()
         {
              $("#forgot").kendoMobileModalView("close");
+        },
+        
+        login:function()
+        {
+            apps.navigate("#login");
+        },
+        
+        register:function()
+        {
+            apps.navigate("#register");
         }
         
     });
