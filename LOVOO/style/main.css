@@ -48,7 +48,7 @@ body {
 #forgot .forgot_nvbar{background-color:#645860 !important;border-bottom:1px solid red !important}
 #forgot .forgot_nvbar .forgot_a{color:white}
 #forgot .forgot_nvbar .forgot_span{color:white;font-size:15px;}
-#forgot .txtbox{ width:100%;height:32px;padding-left:7px}
+#forgot .txtbox{ width:100%;height:32px;padding-left:7px;border:1px solid #ccc}
 #forgot .btn{width:120px;height:38px;line-height:22px;background-color:#85C643;color:#FFF;}
 #forgot p{margin-top:25px;}
 #forgot p:nth-child(2) .btn:nth-child(1){margin-left:0px;}
