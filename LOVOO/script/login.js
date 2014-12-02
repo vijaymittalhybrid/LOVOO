@@ -26,6 +26,11 @@
         register:function()
         {
             apps.navigate("register");
+        },
+        
+        termsAndcondn:function()
+        {
+            apps.navigate("views/terms.html");
         }
         
     });

@@ -33,7 +33,7 @@ body {
 .registerMainDV #registerDV1{width:100%;height:auto;background-color:#DEDCDC;border:1px solid #ccc;line-height:25px;font-size:18px;color:#807F7F}
 #registerDV1 p{margin-left:25px;}
 #register .footerClass{background-color:#DEDCDC;height:50px;}
-#register .footerClass a{margin:18px 0px 0px 35px;font-style:italic;color:#EF84C5;font-weight:bold;line-height:50px;}
+#register .footerClass a{margin:18px 0px 0px 35px;font-weight:bold;background-color:#DEDCDC !important;color:#EF84C5;font-style:italic;border:0px solid;line-height:0px;margin-left:30px;font-size:14px;}
 .registerMainDV #registerDV2{width:100%;height:auto;margin-top:15px;}
 #registerDV2 .fbregister{width:90%;height:45px;margin:0px auto;margin-top:12px;}
 #registerDV2 .twtregister{width:90%;height:45px;margin:0px auto;background:yellow;margin-top:12px;}
@@ -51,7 +51,15 @@ body {
 #forgot .txtbox{ width:100%;height:32px;padding-left:7px;border:1px solid #ccc}
 #forgot .btn{width:120px;height:38px;line-height:22px;background-color:#85C643;color:#FFF;}
 #forgot p{margin-top:25px;}
-#forgot p:nth-child(2) .btn:nth-child(1){margin-left:0px;}
-#forgot p:nth-child(2) .btn:nth-child(2){margin-left:11px;}
+/*#forgot p:nth-child(2) .btn:nth-child(1){margin-left:8px;}*/
+#forgot p:nth-child(2) .btn:nth-child(2){margin-left:8px;}
+
+
+/*terms*/
+#terms .km-content{background-color:#FFFFFF}
+.terms_nvbar{background-color:#645860 !important;border-bottom:1px solid red !important}
+.terms_nvbar .terms_a{color:white}
+.terms_nvbar .terms_span{color:white;font-size:14px;}
+#terms .content{width:97%;height:auto;margin:0px auto;text-align:justify;line-height:20px;font-size:14px;}
 
 

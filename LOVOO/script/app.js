@@ -12,7 +12,7 @@
         $("#loadingPregressBar").kendoProgressBar({
             showStatus: false,
             animation:{
-               duration:120
+               duration:200
             },
             complete: onComplete
         });
@@ -21,11 +21,11 @@
     
     var load = function(){
         var pb = $("#loadingPregressBar").data("kendoProgressBar");
-        pb.value(0);
+        pb.value(10);
         
         var interval = setInterval(function () {
             if (pb.value() < 100) {
-                pb.value(pb.value() + 1);
+                pb.value(pb.value() + 5);
             } else {
                 clearInterval(interval);
             }
