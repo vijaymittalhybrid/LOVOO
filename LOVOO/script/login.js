@@ -20,12 +20,12 @@
         
         login:function()
         {
-            apps.navigate("#login");
+            apps.navigate("index.html#login");
         },
         
         register:function()
         {
-            apps.navigate("#register");
+            apps.navigate("index.html#register");
         }
         
     });

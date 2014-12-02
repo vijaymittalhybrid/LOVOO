@@ -9,13 +9,13 @@ body {
 .login_nvbar .login_a{color:white}
 .login_nvbar .login_span{color:white}
 .loginMainDV{width:100%;height:auto}
-#loginDV1{ width:100%;height:auto;margin-top:30px;margin-bottom:10px;}
+#loginDV1{ width:100%;height:auto;margin-top:30px;margin-bottom:10px;display:block}
 #loginDV1 .txtbox{ width:100%;height:32px;border:1px solid #ccc;padding-left:7px;}
-#loginDV1 .btn{width:150px;float:right;height:38px;line-height:22px;background-color:#85C643;color:#FFF}
-#loginDV1 .Fbtn{background-color:#FFFFFF !important;color:#EF84C5;font-style:italic;border:0px solid;line-height:0px;margin-left:0px;font-size:14px;}
+#loginDV1 .btn{width:120px;float:right;height:38px;line-height:22px;background-color:#85C643;color:#FFF}
+#loginDV1 .Fbtn{background-color:#FFFFFF !important;color:#EF84C5;font-style:italic;border:0px solid;line-height:30px;margin-left:0px;font-size:14px;}
 #loginDV2{width:100%;margin:0px auto;margin-top:35px;}
-#loginDV2 hr:nth-child(1){width:45%;float:left;border:1px solid #E7E5E5}
-#loginDV2 hr:nth-child(3){width:45%;float:right;border:1px solid #E7E5E5}
+#loginDV2 hr:nth-child(1){width:40%;float:left;border:1px solid #E7E5E5}
+#loginDV2 hr:nth-child(3){width:40%;float:right;border:1px solid #E7E5E5}
 #loginDV2 span{color:#E7E5E5}
 #loginDV3{width:95%;height:100px;margin:0px auto;margin-top:15px;}
 #loginDV3 .btn{width:70px;height:42px;line-height:22px;}
@@ -41,7 +41,7 @@ body {
 #registerDV2 .txtcontent{width:100%;height:50px;}
 .txtcontent p{font-size:13px;text-align:center}
 #registerDV2 .emailregister{width:90%;height:45px;margin:0px auto;background:#85C643;margin-top:12px;}
-#registerDV2 .emailregister span{line-height: 40px;margin-left: 57px;;color:white}
+#registerDV2 .emailregister span{line-height: 42px;margin-left: 57px;;color:white}
 
 /*FORGOT*/
 #forgot .km-content{background-color:#FFFFFF}
