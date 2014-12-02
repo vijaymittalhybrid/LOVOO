@@ -20,7 +20,7 @@
   "WP8PublisherID": "{44d9e8e3-a3b3-4280-8f2f-ba3c3eb56020}",
   "WP8ProductID": "{6237574e-f4b2-4755-90c7-028ba7018778}",
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
-  "FrameworkVersion": "3.5.0",
+  "FrameworkVersion": "3.2.0",
   "CorePlugins": [
     "org.apache.cordova.battery-status",
     "org.apache.cordova.camera",
@@ -74,7 +74,7 @@
   ],
   "Framework": "Cordova",
   "CordovaPluginVariables": {
-    "com.telerik.mobiletesting": {
+    "com.telerik.Cordova-MobileTestingExtension": {
       "IOS_APP_URL": ""
     }
   }
