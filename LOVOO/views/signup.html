@@ -1,0 +1,133 @@
+<div data-role="view" id="signupForm" data-transition="overlay:up" data-title="Login 1/4" data-model="app.signupService.viewModel">
+    <div data-role="header">
+        <div data-role="navbar" class="signup_nvbar">
+            <a data-role="backbutton" data-align="left" class="signup_a">Back</a>
+            <span data-role="view-title" class="signup_span"></span>
+            <a data-role="button" data-align="right" href="#signupForm2" class="signup_a">Next</a>
+        </div>
+    </div>
+    
+   <div data-role="content">
+       <h2>Please Enter a Valid Email Address</h2>
+       <div class="signupDV">
+           <p>
+               <input type="email" name="email" id="email" class="txtbox" placeholder="Email Address"/>
+           </p>
+       </div>
+       
+       <div class="myLogo"></div>
+   </div>
+</div>
+
+
+<!--signupForm2-->
+
+<div data-role="view" id="signupForm2" data-transition="fade" data-title="Login 2/4" data-model="app.signupService.viewModel">
+    <div data-role="header">
+        <div data-role="navbar" class="signup_nvbar">
+            <a data-role="backbutton" data-align="left" class="signup_a">Back</a>
+            <span data-role="view-title" class="signup_span"></span>
+            <a data-role="button" data-align="right" href="#signupForm3" class="signup_a">Next</a>
+        </div>
+    </div>
+    
+   <div data-role="content">
+       <h2>We need your photo,name and age</h2>
+       
+       <div class="signupDV">
+            <div class="loadImg">
+            </div>
+           <p>
+               <input type="text" name="name" id="name" class="txtbox" placeholder="Enter new user name"/>
+           </p>
+           <p>
+               
+           </p>
+       </div>
+   </div>
+</div>
+
+
+<!--signupForm3-->
+
+<div data-role="view" id="signupForm3" data-transition="fade" data-title="Login 3/4" data-model="app.signupService.viewModel">
+    <div data-role="header">
+        <div data-role="navbar" class="signup_nvbar">
+            <a data-role="backbutton" data-align="left" class="signup_a">Back</a>
+            <span data-role="view-title" class="signup_span"></span>
+            <a data-role="button" data-align="right" href="#signupForm4" class="signup_a">Next</a>
+        </div>
+    </div>
+    
+   <div data-role="content">
+       
+       <div style="display:block">
+            <h2>I am</h2>
+
+            <div class="signupDV">
+                <div class="loadImg"></div>
+                <p>
+                    <input type="radio" name="gender" id="gender" value="Male"/><label>Male</label>
+                </p>
+                <p>
+                    <input type="radio" name="gender" id="gender" value="Female"/><label>Female</label>
+                </p>
+            </div>
+       </div>
+       
+        <div style="display:block;margin-top:15px;">
+            <h2>I like</h2>
+            <div class="signupDV2">
+                <p>
+                    <input type="radio" name="interest" id="interest" value="Men"/><label>Men</label>
+                </p>
+                <p>
+                    <input type="radio" name="interest" id="interest" value="Women"/><label>Women</label>
+                </p>
+                <p>
+                   <input type="radio" name="interest" id="interest" value="Both"/><label>Both</label>
+                </p>
+            </div>
+        </div>
+   </div>
+</div>
+
+
+
+<!--signupForm4-->
+
+<div data-role="view" id="signupForm4" data-transition="fade" data-title="Login 4/4" data-model="app.signupService.viewModel">
+    <div data-role="header">
+        <div data-role="navbar" class="signup_nvbar">
+            <a data-role="backbutton" data-align="left" class="signup_a">Back</a>
+            <span data-role="view-title" class="signup_span"></span>
+            <a data-role="button" data-align="right" class="signup_a">Next</a>
+        </div>
+    </div>
+    
+   <div data-role="content">
+       
+       <div style="display:block">
+            <h2>Flirting Interests</h2>
+
+            <div class="signupDV2">
+                <p>
+                    <input type="radio" name="gender" id="gender" value="Male"/><label>Nice Conversations</label>
+                </p>
+                <p>
+                    <input type="radio" name="gender" id="gender" value="Female"/><label>Meet new people</label>
+                </p>
+                <p>
+                    <input type="radio" name="interest" id="interest" value="Men"/><label>Flirt and Date</label>
+                </p>
+                <p>
+                    By completing the registration process, I accept the
+                    <a href="./terms.html">General Terms and Conditions of Use.</a>
+                </p>
+                <p>
+                    <a data-role="button">Register</a>
+                </p>
+            </div>
+       </div>
+   </div>
+</div>
