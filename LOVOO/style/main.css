@@ -1,6 +1,14 @@
 body {
 }
 
+
+.k-calendar .k-header{background: #3F51B5;}
+.k-calendar .k-link.k-nav-fast {color: #FFFFFF;}
+.k-state-focused.k-state-selected, .k-list>.k-state-focused.k-state-selected, .k-listview>.k-state-focused.k-state-selected, td.k-state-focused.k-state-selected {-webkit-box-shadow: inset 0 0 3px 4px #3F51B5;box-shadow: inset 0 0 3px 4px #3F51B5;}
+.k-state-selected{background-color:#3F51B5}
+.k-button, .k-calendar .k-header .k-link,.k-calendar .k-footer .k-link{text-transform:uppercase}
+.k-calendar .k-footer .k-nav-today{color:#3F51B5}
+
 #loadpage #content_loadpage #loadingPregressBar { width:200px;height:2px;margin:0px auto;position:absolute;top:475px;left:15px;right:15px;}
 #loadpage .km-content{background-image:url('../style/image/L4.jpg');background-repeat: no-repeat;background-size: 100% 100%;opacity:0.6;filter: alpha(opacity=60);}
 .pp1{height:420px;background-image:url('../style/image/L1.jpg');background-repeat: no-repeat;background-size: 100% 100%;}
@@ -85,8 +93,11 @@ body {
 #signupForm2 .signup_nvbar .signup_a{color:white}
 #signupForm2 .signup_nvbar .signup_span{color:white;font-size:15px;}
 #signupForm2 .signupDV{width:100%;height:auto;margin:0px auto;margin-top:30px;}
-#signupForm2 .signupDV .txtbox{width:100%;height:32px;border:1px solid #ccc;padding-left:7px;}
-#signupForm2 .signupDV .loadImg{width:70px;height:70px;border:1px solid #ccc;box-shadow:0px 0px 8px -2px;float:right;margin-right:25px;margin-right: 16px;margin-top: -44px;margin-bottom:25px;background:url('../style/image/load.png')}
+#signupForm2 .signupDV p{margin-top:-10px;}
+#signupForm2 .signupDV .txtbox{width:100%;height:32px;border:1px solid #ccc;padding-left:7px;margin-top:-7px}
+#signupForm2 .signupDV .loadImg{width:70px;height:70px;float:right;margin-right:25px;margin-right: 16px;margin-top: -40px;margin-bottom:25px;}
+#signupForm2 .signupDV .loadImg a{border:1px solid #ccc;box-shadow:0px 0px 8px -2px;background: url('../style/image/load.png');width: 100%;height: 100%;margin: -1px 0px 0px -1px;}
+
 
 #signupForm3 .km-content{background-color:#DEDCDC}
 #signupForm3 .signup_nvbar{background-color:#645860 !important;border-bottom:1px solid red !important}
@@ -103,7 +114,6 @@ body {
 #signupForm3 .signupDV2 p label{margin-left:15px;}
 
 
-
 #signupForm4 .km-content{background-color:#DEDCDC}
 #signupForm4 .signup_nvbar{background-color:#645860 !important;border-bottom:1px solid red !important}
 #signupForm4 .signup_nvbar .signup_a{color:white}
@@ -113,6 +123,55 @@ body {
 #signupForm4 .signupDV2 p input{margin: 12px 0px 0px 11px;}
 #signupForm4 .signupDV2 p label{margin-left:15px;}
 #signupForm4 .signupDV2 p:nth-child(4){width:auto;background-color:#DEDCDC;height:40px;font-size: 12px;text-align: center;line-height: 15px;border: 0px solid #ccc;box-shadow: 0px 0px 0px 0px;}
-#signupForm4 .signupDV2 p:nth-child(4) a{color:#EF84C5}
+#signupForm4 .signupDV2 p:nth-child(4) a{color:#EF84C5;border:0px solid;background-color:#DEDCDC}
+#signupForm4 .signupDV2 p:nth-child(4) a:active{background-color:#DEDCDC}
 #signupForm4 .signupDV2 p:nth-child(5){width:auto;background-color:#DEDCDC;height:auto;border: 0px solid #ccc;box-shadow: 0px 0px 0px 0px;}
 #signupForm4 .signupDV2 p:nth-child(5) a{width:100%;height:40px;background:#85C643;line-height: 20px;color: #fff;}
+
+
+
+
+
+
+body{
+  margin      : 0;
+  padding     : 1.5em;
+  font-family : Georgia,Utopia,Charter,serif;
+}
+
+.example{
+  margin-bottom : 1.5em;
+}
+
+input[type=radio   ]:not(old){
+  opacity   : 0;
+}
+
+
+
+
+input[type=radio   ]:not(old) + label > span{
+  display          : inline-block;
+  width            : 20px;
+  height           : 20px;
+  margin-left      : -27px;
+  background-image : linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  vertical-align   : bottom;
+}
+
+
+input[type=radio]:not(old):checked +  label > span > span{
+  display          : block;
+  width            : 15px;
+  height           : 15px;
+  margin           : 0.125em;
+  border           : 0.0625em solid rgb(115,153,77);
+  border-radius    : 0.125em;
+  background       : rgb(153,204,102);
+  background-image :    -moz-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+  background-image :     -ms-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+  background-image :      -o-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+  background-image : -webkit-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+  background-image :         linear-gradient(rgb(179,217,140),rgb(153,204,102));
+}
+

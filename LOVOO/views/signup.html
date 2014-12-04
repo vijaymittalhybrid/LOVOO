@@ -3,7 +3,7 @@
         <div data-role="navbar" class="signup_nvbar">
             <a data-role="backbutton" data-align="left" class="signup_a">Back</a>
             <span data-role="view-title" class="signup_span"></span>
-            <a data-role="button" data-align="right" href="#signupForm2" class="signup_a">Next</a>
+            <a data-role="button" data-align="right" data-bind="click:ProcessToNavigate1" class="signup_a">Next</a>
         </div>
     </div>
     
@@ -11,7 +11,7 @@
        <h2>Please Enter a Valid Email Address</h2>
        <div class="signupDV">
            <p>
-               <input type="email" name="email" id="email" class="txtbox" placeholder="Email Address"/>
+               <input type="email" name="email" id="email" data-bind="value:email" class="txtbox" placeholder="Email Address"/>
            </p>
        </div>
        
@@ -22,12 +22,12 @@
 
 <!--signupForm2-->
 
-<div data-role="view" id="signupForm2" data-transition="fade" data-title="Login 2/4" data-model="app.signupService.viewModel">
+<div data-role="view" id="signupForm2" data-transition="fade" data-title="Login 2/4" data-model="app.signupService.viewModel" data-show="app.signupService.viewModel.show">
     <div data-role="header">
         <div data-role="navbar" class="signup_nvbar">
             <a data-role="backbutton" data-align="left" class="signup_a">Back</a>
             <span data-role="view-title" class="signup_span"></span>
-            <a data-role="button" data-align="right" href="#signupForm3" class="signup_a">Next</a>
+            <a data-role="button" data-align="right" data-bind="click:ProcessToNavigate2" class="signup_a">Next</a>
         </div>
     </div>
     
@@ -36,15 +36,28 @@
        
        <div class="signupDV">
             <div class="loadImg">
+                <img src="" style="width:100%;height:100%;display:none"/>
+                <a href="#photoUpload" data-rel="actionsheet" data-role="button"></a>
             </div>
            <p>
-               <input type="text" name="name" id="name" class="txtbox" placeholder="Enter new user name"/>
+               <input type="text" name="name" id="name" data-bind="value:name" class="txtbox" placeholder="Enter new user name"/>
            </p>
-           <p>
-               
-           </p>
+           <div style="width: 320px; text-align: center;">
+               <div id="calendar"></div>
+           </div>
        </div>
    </div>
+    
+<script>
+$(document).ready(function() {
+// create Calendar from div HTML element
+
+});
+</script>
+    <ul data-role="actionsheet" id="photoUpload" data-cancel="Close">
+        <li><a href="#" data-action="replyAll">Take Photo</a></li>
+        <li><a href="#" data-action="archive">Upload Photo</a></li>
+    </ul>
 </div>
 
 
@@ -64,28 +77,43 @@
        <div style="display:block">
             <h2>I am</h2>
 
-            <div class="signupDV">
+            <!--<div class="signupDV">
                 <div class="loadImg"></div>
                 <p>
                     <input type="radio" name="gender" id="gender" value="Male"/><label>Male</label>
+                    <input id="gender1" type="radio" name="gender" value="Male"><label for="radio1"><span><span></span></span>Male</label>
                 </p>
                 <p>
                     <input type="radio" name="gender" id="gender" value="Female"/><label>Female</label>
+                    <input id="gender2" type="radio" name="gender" value="Female"><label for="radio1"><span><span></span></span>Female</label>
+                </p>
+            </div>-->
+           
+            <div class="example signupDV">
+                <p>
+                    <input id="radio1" type="radio" name="radio" value="1"><label for="radio1"><span><span></span></span>&nbsp;&nbsp;&nbsp;Male</label>
+                </p>
+
+                <p>
+                    <input id="radio2" type="radio" name="radio" value="2"><label for="radio2"><span><span></span></span>&nbsp;&nbsp;&nbsp;Female</label>
                 </p>
             </div>
        </div>
        
         <div style="display:block;margin-top:15px;">
             <h2>I like</h2>
-            <div class="signupDV2">
+            <div class="example signupDV2">
                 <p>
-                    <input type="radio" name="interest" id="interest" value="Men"/><label>Men</label>
+                    <!--<input type="radio" name="interest" id="interest" value="Men"/><label>Men</label>-->
+                     <input id="interest" type="radio" name="interest" value="Men"><label for="Men"><span><span></span></span>&nbsp;&nbsp;&nbsp;Men</label>
                 </p>
                 <p>
-                    <input type="radio" name="interest" id="interest" value="Women"/><label>Women</label>
+                    <!--<input type="radio" name="interest" id="interest" value="Women"/><label>Women</label>-->
+                    <input id="interest" type="radio" name="interest" value="Women"><label for="Women"><span><span></span></span>&nbsp;&nbsp;&nbsp;Women</label>
                 </p>
                 <p>
-                   <input type="radio" name="interest" id="interest" value="Both"/><label>Both</label>
+                   <!--<input type="radio" name="interest" id="interest" value="Both"/><label>Both</label>-->
+                    <input id="interest" type="radio" name="interest" value="Both"><label for="Both"><span><span></span></span>&nbsp;&nbsp;&nbsp;Both</label>
                 </p>
             </div>
         </div>
@@ -101,7 +129,6 @@
         <div data-role="navbar" class="signup_nvbar">
             <a data-role="backbutton" data-align="left" class="signup_a">Back</a>
             <span data-role="view-title" class="signup_span"></span>
-            <a data-role="button" data-align="right" class="signup_a">Next</a>
         </div>
     </div>
     
@@ -122,7 +149,7 @@
                 </p>
                 <p>
                     By completing the registration process, I accept the
-                    <a href="./terms.html">General Terms and Conditions of Use.</a>
+                    <a data-role="button" data-bind="click:navigateToTerms" style="">General Terms and Conditions of Use.</a>
                 </p>
                 <p>
                     <a data-role="button">Register</a>
