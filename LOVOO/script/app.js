@@ -20,11 +20,11 @@
     
     var load = function(){
         var pb = $("#loadingPregressBar").data("kendoProgressBar");
-        pb.value(10);
+        pb.value(0);
         
         var interval = setInterval(function () {
             if (pb.value() < 100) {
-                pb.value(pb.value() + 5);
+                pb.value(pb.value() + 1);
             } else {
                 clearInterval(interval);
             }
