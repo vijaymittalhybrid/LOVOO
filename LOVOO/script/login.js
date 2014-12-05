@@ -36,8 +36,9 @@
         },
         
         navigateToSignup:function(){
-            
-           apps.navigate("views/signup.html");
+            localStorage.setItem("showStatus","0");
+            localStorage.setItem("dob","0");
+            apps.navigate("views/signup.html");
         },
         
         loginUser:function(){

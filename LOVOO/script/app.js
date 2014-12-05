@@ -4,6 +4,7 @@
     var onDeviceReady = function()
     {
         checkConnection();
+        console.log(navigator.camera);
     };
     
     var progressBar = function(){
@@ -57,10 +58,10 @@
         }
         else
         {
-           /*setTimeout(function(){
+           setTimeout(function(){
                 progressBar();
-            }, 2000);*/
-            apps.navigate("#mainpage");
+            }, 2000);
+            //apps.navigate("#mainpage");
         }
       
     }; 

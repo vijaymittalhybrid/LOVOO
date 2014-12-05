@@ -36,8 +36,8 @@
        
        <div class="signupDV">
             <div class="loadImg">
-                <img src="" style="width:100%;height:100%;display:none"/>
-                <a href="#photoUpload" data-rel="actionsheet" data-role="button"></a>
+                <img src="" id="userImg"/>
+                <a href="#photoUpload" id="photoBtn" data-rel="actionsheet" data-role="button"></a>
             </div>
            <p>
                <input type="text" name="name" id="name" data-bind="value:name" class="txtbox" placeholder="Enter new user name"/>
@@ -47,18 +47,21 @@
            </div>
        </div>
    </div>
-    
-<script>
-$(document).ready(function() {
-// create Calendar from div HTML element
-
-});
-</script>
     <ul data-role="actionsheet" id="photoUpload" data-cancel="Close">
-        <li><a href="#" data-action="replyAll">Take Photo</a></li>
-        <li><a href="#" data-action="archive">Upload Photo</a></li>
+        <li><a href="#"  data-action="takePhoto">Take Photo</a></li>
+        <li><a href="#"  data-action="uploadPhoto">Upload Photo</a></li>
     </ul>
 </div>
+
+<script>
+    function uploadPhoto(e){
+       app.signupService.viewModel.getExistingImage();
+    }
+    
+    function takePhoto(e){
+        app.signupService.viewModel.takeCapturePhoto();
+    }
+</script>
 
 
 <!--signupForm3-->
@@ -68,7 +71,7 @@ $(document).ready(function() {
         <div data-role="navbar" class="signup_nvbar">
             <a data-role="backbutton" data-align="left" class="signup_a">Back</a>
             <span data-role="view-title" class="signup_span"></span>
-            <a data-role="button" data-align="right" href="#signupForm4" class="signup_a">Next</a>
+            <a data-role="button" data-align="right" data-bind="click:ProcessToNavigate3" class="signup_a">Next</a>
         </div>
     </div>
     
@@ -90,12 +93,13 @@ $(document).ready(function() {
             </div>-->
            
             <div class="example signupDV">
+                <div class="loadImg"></div>
                 <p>
-                    <input id="radio1" type="radio" name="radio" value="1"><label for="radio1"><span><span></span></span>&nbsp;&nbsp;&nbsp;Male</label>
+                    <input id="gender1" type="radio" name="gender" data-bind="checked:gender" value="Male"><label for="Male"><span><span></span></span>&nbsp;&nbsp;&nbsp;Male</label>
                 </p>
 
                 <p>
-                    <input id="radio2" type="radio" name="radio" value="2"><label for="radio2"><span><span></span></span>&nbsp;&nbsp;&nbsp;Female</label>
+                    <input id="gender2" type="radio" name="gender" data-bind="checked:gender" value="Female"><label for="Female"><span><span></span></span>&nbsp;&nbsp;&nbsp;Female</label>
                 </p>
             </div>
        </div>
@@ -105,15 +109,15 @@ $(document).ready(function() {
             <div class="example signupDV2">
                 <p>
                     <!--<input type="radio" name="interest" id="interest" value="Men"/><label>Men</label>-->
-                     <input id="interest" type="radio" name="interest" value="Men"><label for="Men"><span><span></span></span>&nbsp;&nbsp;&nbsp;Men</label>
+                     <input id="interest" type="radio" name="interest" data-bind="checked:interest" value="Men"><label for="Men"><span><span></span></span>&nbsp;&nbsp;&nbsp;Men</label>
                 </p>
                 <p>
                     <!--<input type="radio" name="interest" id="interest" value="Women"/><label>Women</label>-->
-                    <input id="interest" type="radio" name="interest" value="Women"><label for="Women"><span><span></span></span>&nbsp;&nbsp;&nbsp;Women</label>
+                    <input id="interest" type="radio" name="interest" data-bind="checked:interest" value="Women"><label for="Women"><span><span></span></span>&nbsp;&nbsp;&nbsp;Women</label>
                 </p>
                 <p>
                    <!--<input type="radio" name="interest" id="interest" value="Both"/><label>Both</label>-->
-                    <input id="interest" type="radio" name="interest" value="Both"><label for="Both"><span><span></span></span>&nbsp;&nbsp;&nbsp;Both</label>
+                    <input id="interest" type="radio" name="interest" data-bind="checked:interest" value="Both"><label for="Both"><span><span></span></span>&nbsp;&nbsp;&nbsp;Both</label>
                 </p>
             </div>
         </div>
@@ -139,20 +143,23 @@ $(document).ready(function() {
 
             <div class="signupDV2">
                 <p>
-                    <input type="radio" name="gender" id="gender" value="Male"/><label>Nice Conversations</label>
+                    <!--<input type="radio" name="gender" id="gender" value="Male"/><label>Nice Conversations</label>-->
+                    <input id="choice" type="radio" name="choice" data-bind="checked:choice" value="Nice_Conversations"><label for="Men"><span><span></span></span>&nbsp;&nbsp;&nbsp;Nice Conversations</label>
                 </p>
                 <p>
-                    <input type="radio" name="gender" id="gender" value="Female"/><label>Meet new people</label>
+                    <!--<input type="radio" name="gender" id="gender" value="Female"/><label>Meet new people</label>-->
+                    <input id="choice" type="radio" name="choice" data-bind="checked:choice" value="Meet_new_people"><label for="Meet_new_people"><span><span></span></span>&nbsp;&nbsp;&nbsp;Meet new people</label>
                 </p>
                 <p>
-                    <input type="radio" name="interest" id="interest" value="Men"/><label>Flirt and Date</label>
+                   <!-- <input type="radio" name="interest" id="interest" value="Men"/><label>Flirt and Date</label>-->
+                    <input id="choice" type="radio" name="choice" data-bind="checked:choice" value="Flirt_and_Date"><label for="Flirt_and_Date"><span><span></span></span>&nbsp;&nbsp;&nbsp;Flirt and Date</label>
                 </p>
                 <p>
                     By completing the registration process, I accept the
                     <a data-role="button" data-bind="click:navigateToTerms" style="">General Terms and Conditions of Use.</a>
                 </p>
                 <p>
-                    <a data-role="button">Register</a>
+                    <a data-role="button" data-bind="click:signupFormRegister">Register</a>
                 </p>
             </div>
        </div>

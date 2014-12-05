@@ -6,60 +6,11 @@
         
         email:'',
         name:'',
+        gender:'',
+        interest:'',
+        choice:'',
         
         show:function(){
-            
-            $("#calendar").kendoCalendar({
-                format: "yyyy/MM/dd",
-                change:function(e){
-                    var value = this.value();
-                    localStorage.setItem("dob",value);
-                    
-                   /* var o_year = value.getMonth();
-                    var o_month = value.getYear();
-                    
-                    console.log("month is "+value.getMonth());
-                    console.log("Year is "+value.getYear());
-                    console.log(e);
-                   
-                    var d = new Date();
-                    console.log("today"+d);
-                    var current_Year = d.getYear();
-                    var current_month = d.getMonth();
-                    var countY=0;
-                   var data = current_Year - o_year;
-                    console.log("jhghjgj"+data);*/
-                },
-                /*navigate: function (e) {
-                console.log(this._current);
-                var cur = new Date(this._current);
-                var prev = new Date(cur);
-                prev.setMonth(cur.getMonth() - 1);
-                var next = new Date(cur);
-                next.setMonth(cur.getMonth() + 1);
-                console.log("-----------");
-                console.log("prev", prev);
-                console.log("cur ", cur);
-                console.log("next", next);
-
-                console.log("********************************");
-                var cur1 = new Date(this._current);
-                var prev1 = new Date(cur1);
-                prev1.setYear(cur1.getYear() - 18);
-                var next1 = new Date(cur);
-                next1.setMonth(cur1.getMonth() + 1);
-                console.log("-----------");
-                console.log("prev1", prev1);
-                console.log("cur1 ", cur1);
-                console.log("next1", next1);
-                console.log("count"+prev1.getYear());
-
-                console.log("+++++++++++++++++++++++++");
-                var cur2 = new Date();
-                console.log("Current "+cur2);
-                console.log(cur2.getMonth());
-                }*/
-            });
         },
         
         check:function(){
@@ -91,10 +42,34 @@
                 apps.pane.loader.show();
                 setTimeout(function() {
                     apps.pane.loader.hide();
-                    localStorage.setItem("dob","0");
+                    if(localStorage.getItem("showStatus") === 0 || localStorage.getItem("showStatus") === '0')
+                    {
+                        app.signupService.viewModel.calanderCreate();
+                        localStorage.setItem("showStatus","1");
+                    }
                     apps.navigate("#signupForm2");
-                }, 4000);
+                }, 3000);
             }
+        },
+        
+        calanderCreate:function(){
+            var d = new Date();
+            var maxYear = d.getYear()-18,
+                maxMonth = d.getMonth(),
+                maxDay = d.getDay(),
+                minYear = maxYear-60,
+                minMonth = maxMonth,
+                minDay = maxDay+1;
+            
+            $("#calendar").kendoCalendar({
+                format: "yyyy/MM/dd",
+                min:new Date(minYear,minMonth,minDay),
+                max:new Date(maxYear,maxMonth,maxDay),
+                change:function(e){
+                    var value = this.value();
+                    localStorage.setItem("dob",value);
+                }
+            });
         },
         
         emailValidation:function(uemail){
@@ -129,7 +104,7 @@
                 setTimeout(function() {
                     apps.pane.loader.hide();
                     apps.navigate("#signupForm3");
-                }, 4000);
+                }, 3000);
                 
             }
         },
@@ -138,6 +113,101 @@
             var letters = /^[A-Za-z]+$/; 
             return letters.test(uname);
         },
+        
+        ProcessToNavigate3:function(){
+            
+            var that = this,
+                genderSelect = that.get('gender'),
+                likeSelect = that.get('interest');
+            
+            if(genderSelect === "")
+            {
+                navigator.notification.alert("Please select your Gender.",function(){},"Notification","OK");
+            }
+            else if(likeSelect === "")
+            {
+                navigator.notification.alert("Please select, What do you like?",function(){},"Notification","OK");
+            }
+            else
+            {
+                console.log(genderSelect);
+                console.log(likeSelect);
+                apps.pane.loader.show();
+                setTimeout(function() {
+                    apps.pane.loader.hide();
+                    apps.navigate("#signupForm4");
+                }, 3000);
+            }
+        },
+        
+        signupFormRegister:function(){
+            
+             var that = this,
+                choiceSelect = that.get('choice');
+            
+            if(choiceSelect === "")
+            {
+                navigator.notification.alert("Please select your Choice.",function(){},"Notification","OK");
+            }
+            else
+            {
+                console.log(choiceSelect);
+                apps.pane.loader.show();
+                setTimeout(function() {
+                    apps.pane.loader.hide();
+                    apps.navigate("views/dashboard.html");
+                }, 3000);
+            }
+        },
+        
+        takeCapturePhoto:function(){
+            var that = this;
+            navigator.camera.getPicture(that.CapturePhotoonSuccess, that.CapturePhotoonFail, 
+                                                        { 
+                                                            quality: 50,
+                                                            destinationType: Camera.DestinationType.DATA_URL
+                                                        }
+            );
+        },
+        
+        CapturePhotoonSuccess:function(imageData){
+            var image = document.getElementById('userImg');
+            var btn = document.getElementById('photoBtn');
+            image.src = "data:image/jpeg;base64," + imageData;
+            
+            image.style.display = 'block';
+            btn.style.display = 'none';
+            
+            console.log(image.src);
+        },
+        
+        CapturePhotoonFail:function(message){
+            navigator.notification.alert('Failed because: ' + message,function(){},'Notification','OK');
+        },
+        
+        getExistingImage:function(){
+            var that = this;
+            navigator.camera.getPicture(that.ExistingImageonSuccess, that.ExistingImageonFail, 
+                                                        { 
+                                                            quality: 50,
+                                                            destinationType: Camera.DestinationType.FILE_URI 
+                                                        }
+            );
+        },
+        
+        ExistingImageonSuccess:function(imageURI){
+            var image = document.getElementById('userImg');
+            var btn = document.getElementById('photoBtn');
+            image.src = imageURI;
+            image.style.display = 'block';
+            btn.style.display = 'none';
+            
+            console.log(image.src);
+        },
+        
+        ExistingImageonFail:function(message){
+             navigator.notification.alert('Failed because: ' + message,function(){},'Notification','OK');
+        }
         
     });
     app.signupService = {
