@@ -156,6 +156,7 @@ input[type=radio   ]:not(old) + label > span{
   width            : 20px;
   height           : 20px;
   margin-left      : -27px;
+    border:1px solid #ccc;
   background-image : linear-gradient(rgb(240,240,240),rgb(224,224,224));
   vertical-align   : bottom;
 }
