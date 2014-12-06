@@ -86,7 +86,7 @@ body {
 #signupForm .signup_nvbar .signup_span{color:white;font-size:15px;}
 #signupForm .signupDV{width:100%;height:auto;margin:0px auto;margin-top:0px;}
 #signupForm .signupDV .txtbox{width:100%;height:32px;border:1px solid #ccc;padding-left:7px;}
-#signupForm .myLogo{width:50%;height:150px;margin:0px auto;margin-top:75px;background:url('../style/image/at.png')}
+#signupForm .myLogo{width:50%;height:150px;margin:0px auto;margin-top:75px;background:url('../style/image/at.png') no-repeat;}
 
 #signupForm2 .km-content{background-color:#DEDCDC}
 #signupForm2 .signup_nvbar{background-color:#645860 !important;border-bottom:1px solid red !important}
@@ -96,7 +96,8 @@ body {
 #signupForm2 .signupDV p{margin-top:-10px;}
 #signupForm2 .signupDV .txtbox{width:100%;height:32px;border:1px solid #ccc;padding-left:7px;margin-top:-7px}
 #signupForm2 .signupDV .loadImg{width:70px;height:70px;float:right;margin-right:25px;margin-right: 16px;margin-top: -40px;margin-bottom:25px;}
-#signupForm2 .signupDV .loadImg img{width:100%;height:100%;display:none;border:1px solid #ccc;box-shadow:0px 0px 8px -2px;}
+#signupForm2 .signupDV .loadImg .cancel{width: 13px;height: 12px;position: absolute;top: 45px;right: 10px;display:none}
+#signupForm2 .signupDV .loadImg img{width:100%;height:100%;border:1px solid #ccc;box-shadow:0px 0px 8px -2px;display:none}
 #signupForm2 .signupDV .loadImg a{border:1px solid #ccc;box-shadow:0px 0px 8px -2px;background: url('../style/image/load.png');width: 100%;height: 100%;margin: -1px 0px 0px -1px;}
 
 

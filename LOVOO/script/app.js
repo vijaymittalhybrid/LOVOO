@@ -4,7 +4,6 @@
     var onDeviceReady = function()
     {
         checkConnection();
-        console.log(navigator.camera);
     };
     
     var progressBar = function(){

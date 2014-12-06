@@ -13,6 +13,9 @@
            <p>
                <input type="email" name="email" id="email" data-bind="value:email" class="txtbox" placeholder="Email Address"/>
            </p>
+           <p>
+               <input type="password" name="rpassword" id="rpassword" data-bind="value:rpassword" class="txtbox" placeholder="Password"/>
+           </p>
        </div>
        
        <div class="myLogo"></div>
@@ -36,6 +39,7 @@
        
        <div class="signupDV">
             <div class="loadImg">
+                <img src="style/image/Close-2-icon.png" class="cancel" data-bind="click:cancelImage" id="cancelImg"/>
                 <img src="" id="userImg"/>
                 <a href="#photoUpload" id="photoBtn" data-rel="actionsheet" data-role="button"></a>
             </div>
