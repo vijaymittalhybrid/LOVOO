@@ -57,10 +57,10 @@
         }
         else
         {
-           setTimeout(function(){
+          /* setTimeout(function(){
                 progressBar();
-            }, 2000);
-            //apps.navigate("#mainpage");
+            }, 2000);*/
+            apps.navigate("#mainpage");
         }
       
     }; 

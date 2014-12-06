@@ -10,7 +10,10 @@
         interest:'',
         choice:'',
         rpassword:'',
-        
+       
+        show:function(){
+            
+        },
        
         navigateToTerms:function()
         {
@@ -158,23 +161,34 @@
                 contentType:'application/json',
                 data:JSON.stringify(Lovoo_Register_Data),
                 success:function(data){
-                    app.signupService.viewModel.resetStorageValue();
                     setTimeout(function() {
                         console.log(data);
-                        apps.navigate("views/dashboard.html");
+                        app.signupService.viewModel.resetRegisteraionValue();
+                        apps.pane.loader.hide();
+                        apps.navigate("#mainpage");
                     }, 2000);
                 },
                 error:function(error){
-                     alert(JSON.stringify(error));
-                    console.log(error);
+                    apps.pane.loader.hide();
+                    navigator.notification.alert(error.responseText,function(){},"Notification","OK");
                 }
             });
             
         },
         
-        resetStorageValue:function(){
+        resetRegisteraionValue:function(){
+            var that = this;
             localStorage.setItem("showStatus","0");
             localStorage.setItem("dob","0");
+            that.set('email','');
+            that.set('name','');
+            that.set('rpassword','');
+            $('input[type="radio"]').prop('checked',false);
+            that.set('interest','');
+            that.set('choice','');
+            that.set('gender','');
+            app.signupService.viewModel.removeImage();
+            document.getElementById("calendar").innerHTML = "";
         },
         
         calanderCreate:function(){
@@ -272,15 +286,19 @@
                 
                 if(confirmed ===1 || confirmed === "1")
                 {
-                    var image = document.getElementById('userImg');
-                    var cancelImg = document.getElementById('cancelImg');
-                    var btn = document.getElementById('photoBtn');
-                    image.style.display = 'none';
-                    cancelImg.style.display = 'none';
-                    btn.style.display = 'block';
+                   app.signupService.viewModel.removeImage();
                 }
             },"Notification");
-        }
+        },
+        
+        removeImage:function(){
+            var image = document.getElementById('userImg');
+            var cancelImg = document.getElementById('cancelImg');
+            var btn = document.getElementById('photoBtn');
+            image.style.display = 'none';
+            cancelImg.style.display = 'none';
+            btn.style.display = 'block';
+        },
         
     });
     app.signupService = {
