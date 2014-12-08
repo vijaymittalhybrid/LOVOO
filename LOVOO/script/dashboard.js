@@ -6,7 +6,11 @@
         show:function(){
             setTimeout(function() {
                 apps.pane.loader.hide();
-            }, 3000);
+                app.signupService.viewModel.resetRegisteraionValue();
+            }, 4000);
+        },
+        hello:function(){
+            apps.navigate("#mainpage");
         }
     });
     app.dashboardService ={

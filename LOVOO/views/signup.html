@@ -1,7 +1,7 @@
 <div data-role="view" id="signupForm" data-transition="overlay:up" data-title="Login 1/4" data-model="app.signupService.viewModel" data-show="app.signupService.viewModel.show">
     <div data-role="header">
         <div data-role="navbar" class="signup_nvbar">
-            <a data-role="backbutton" data-align="left" class="signup_a">Back</a>
+            <a data-role="button" data-align="left" id="cancel" data-bind="click:cancelRegisteraionValue" class="signup_a">Cancel</a>
             <span data-role="view-title" class="signup_span"></span>
             <a data-role="button" data-align="right" data-bind="click:ProcessToNavigate1" id="ProcessToNavigate1" class="signup_a">Next</a>
         </div>

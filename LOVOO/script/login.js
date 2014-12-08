@@ -162,6 +162,7 @@
         register:function()
         {
             apps.navigate("#register");
+            //apps.navigate("views/dashboard.html");
         },
         
         termsAndcondn:function()

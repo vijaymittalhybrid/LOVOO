@@ -162,10 +162,8 @@
                 data:JSON.stringify(Lovoo_Register_Data),
                 success:function(data){
                     setTimeout(function() {
-                        console.log(data);
-                        app.signupService.viewModel.resetRegisteraionValue();
                         apps.pane.loader.hide();
-                        apps.navigate("#mainpage");
+                        apps.navigate("views/dashboard.html");
                     }, 2000);
                 },
                 error:function(error){
@@ -191,19 +189,37 @@
             document.getElementById("calendar").innerHTML = "";
         },
         
-        calanderCreate:function(){
+        cancelRegisteraionValue:function(e){
+            console.log(e.sender.element[0].id);
+            
+            var that = this;
+            localStorage.setItem("showStatus","0");
+            localStorage.setItem("dob","0");
+            that.set('email','');
+            that.set('name','');
+            that.set('rpassword','');
+            $('input[type="radio"]').prop('checked',false);
+            that.set('interest','');
+            that.set('choice','');
+            that.set('gender','');
+            app.signupService.viewModel.removeImage();
+            document.getElementById("calendar").innerHTML = "";
+            apps.navigate("#mainpage");
+        },
+        
+        calanderCreate:function(e){
             var d = new Date();
             var maxYear = d.getYear()-18,
                 maxMonth = d.getMonth(),
-                maxDay = d.getDay(),
+                maxDate = d.getDate(),
                 minYear = maxYear-60,
                 minMonth = maxMonth,
-                minDay = maxDay+1;
+                minDate = maxDate;
             
             $("#calendar").kendoCalendar({
                 format: "yyyy/MM/dd",
-                min:new Date(minYear,minMonth,minDay),
-                max:new Date(maxYear,maxMonth,maxDay),
+                min:new Date(minYear,minMonth,minDate),
+                max:new Date(maxYear,maxMonth,maxDate),
                 change:function(e){
                     var value = this.value();
                     localStorage.setItem("dob",value);
