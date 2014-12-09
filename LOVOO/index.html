@@ -28,9 +28,9 @@
     <!--main page-->
     <div data-role="view" id="mainpage" data-transition="fade" data-stretch="true" data-model="app.loginService.viewModel" data-use-native-scrolling="true">
         
-        <div style="width:100%;height:auto;display:block">
-            <div style="width:100%;height:420px;margin:0px auto;background-image:url('style/image/L6.jpg');background-repeat: no-repeat;background-size: 100% 430px;">
-                <div data-role="scrollview" data-page="2" style="width:100%;">
+        <div style="width:100%;height:auto;display:block;">
+            <div style="width:80%;height:380px;margin:0px auto;margin-top:40px;background-image:url('style/image/camera_outline.png');background-repeat: no-repeat;background-size: 100% 430px;">
+                <div data-role="scrollview" data-page="2" style="width:88%;margin:0px auto">
                     <div data-role="page" class="pp1"></div>
                     <div data-role="page" class="pp2"></div>
                     <div data-role="page" class="pp3"></div>
@@ -58,7 +58,7 @@
            <div class="loginMainDV">
                <div id="loginDV1">
                    <p>
-                       <input type="text" name="uname" id="uname" data-bind="value:uname" class="txtbox" placeholder="Email Address"/>
+                       <input type="email" name="uname" id="uname" data-bind="value:uname" class="txtbox" placeholder="Email Address"/>
                    </p>
                    <p>
                        <input type="password" name="pwd" id="pwd" data-bind="value:pwd" class="txtbox" placeholder="Password"/>
@@ -75,9 +75,9 @@
                
                <div id="loginDV3">
                    <p>
-                       <a data-role="button" class="btn" style="background-image:url('style/image/fb.png');background-size:70px 42px;"></a>
-                       <a data-role="button" class="btn" style="background-image:url('style/image/twt.png');background-size:70px 42px;"></a>
-                       <a data-role="button" class="btn" style="background-image:url('style/image/gplus.png');background-size:70px 42px;"></a>
+                       <a data-role="button" class="btn" data-bind="click:loginWithFacebook" style="background-image:url('style/image/fb.png');background-size:70px 42px;"></a>
+                       <a data-role="button" class="btn" data-bind="click:loginWithTwitter" style="background-image:url('style/image/twt.png');background-size:70px 42px;"></a>
+                       <a data-role="button" class="btn" data-bind="click:loginWithGplus" style="background-image:url('style/image/gplus.png');background-size:70px 42px;"></a>
                    </p>
                    <p>
                        <a style="margin-left:28px;text-decoration:none;color:#EF84C5;font-style:italic">New to LOVOO?Register for free!</a>
@@ -101,9 +101,9 @@
                </div>
                
                <div id="registerDV2">
-                   <div class="fbregister" style="background:url('style/image/regfb.png');background-size:100% 100%;"></div>
-                   <div class="twtregister" style="background:url('style/image/regtwt.png');background-size:100% 100%;"></div>
-                   <div class="gplusregister" style="background:url('style/image/reggplus.png');background-size:100% 100%;"></div>
+                   <div class="fbregister" data-bind="click:registerWithFacebook" style="background:url('style/image/regfb.png');background-size:100% 100%;"></div>
+                   <div class="twtregister" data-bind="click:registerWithTwitter" style="background:url('style/image/regtwt.png');background-size:100% 100%;"></div>
+                   <div class="gplusregister" data-bind="click:registerWithGplus" style="background:url('style/image/reggplus.png');background-size:100% 100%;"></div>
                    <div class="txtcontent">
                        <p>
                            Our Promise:We will never post anything to your storyline or feed without your explicit permission.

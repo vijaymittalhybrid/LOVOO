@@ -44,7 +44,7 @@
             }
             else if(!app.signupService.viewModel.passwordValidation(userPassword))
             {
-                navigator.notification.alert("Password length must be minimum 6 and maximum 20 character.",function(){},"Notification","OK");
+                navigator.notification.alert("Password length must be minimum 6 and maximum 30 character.",function(){},"Notification","OK");
                 document.getElementById("rpassword").focus();
             }
             else
@@ -144,8 +144,9 @@
             apps.pane.loader.show();
             var Lovoo_Register_Data = {
                 
-                'Username':dataParam['username'],
+                'Username':dataParam['userEmailId'],
                 'Email':dataParam['userEmailId'],
+                'upassword':dataParam['userPwd'],
                 'Password':dataParam['userPwd'],
                 'Gender':dataParam['gender'],
                 'Like':dataParam['like'],
@@ -164,11 +165,13 @@
                     setTimeout(function() {
                         apps.pane.loader.hide();
                         apps.navigate("views/dashboard.html");
-                    }, 2000);
+                    }, 4000);
                 },
                 error:function(error){
-                    apps.pane.loader.hide();
-                    navigator.notification.alert(error.responseText,function(){},"Notification","OK");
+                    setTimeout(function() {
+                        apps.pane.loader.hide();
+                        navigator.notification.alert(error.responseText,function(){},"Notification","OK");
+                    }, 3000);
                 }
             });
             
@@ -240,7 +243,7 @@
         },
         
         passwordValidation:function(password){
-            var pwd = /^[A-Za-z0-9!@#$%^&*()_]{6,20}$/;
+            var pwd = /^[A-Za-z0-9!@#$%^&*()_]{6,30}$/;
             return pwd.test(password);
         },
         
@@ -315,6 +318,8 @@
             cancelImg.style.display = 'none';
             btn.style.display = 'block';
         },
+        
+        
         
     });
     app.signupService = {
